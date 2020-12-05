@@ -1,29 +1,29 @@
 package com.company;
 
-public class StringLinkedList {
+public class GenericLinkedList <T>{
     private int size;
-    private Element first;
-    private Element current;
+    private GenericElement<T> first;
+    private GenericElement<T> current;
 
-    public StringLinkedList() {
+    public GenericLinkedList() {
         this.first = null;
     }
 
-    public void add(String value){
+    public void add(T value){
         if(first == null){
-            this.first = new Element(null, value, null);
+            this.first = new GenericElement(null, value, null);
             this.current = this.first;
             this.size = 1;
         } else {
             while(this.current.getNext() != null){
                 this.current = this.current.getNext();
             }
-            this.current.setNext(new Element(this.current, value, null));
+            this.current.setNext(new GenericElement(this.current, value, null));
             this.size++;
         }
     }
 
-    public String get(int index){
+    public T get(int index){
         if(index >= size ){
             System.out.println("Index out of bounds.");
             return null;
@@ -35,7 +35,7 @@ public class StringLinkedList {
         return this.current.getValue();
     }
 
-    public String next(){
+    public T next(){
         if(hasNext()){
             this.current = this.current.getNext();
             return this.current.getValue();
@@ -51,5 +51,4 @@ public class StringLinkedList {
     public int size(){
         return this.size;
     }
-
 }

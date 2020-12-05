@@ -2,12 +2,12 @@ package com.company;
 
 public class Element {
     private Element previous;
-    private String current;
+    private String value;
     private Element next;
 
-    public Element(Element previous, String current, Element next) {
+    public Element(Element previous, String value, Element next) {
         this.previous = previous;
-        this.current = current;
+        this.value = value;
         this.next = next;
     }
 
@@ -19,13 +19,11 @@ public class Element {
         this.previous = previous;
     }
 
-    public String getCurrent() {
-        return current;
+    public String getValue() {
+        return value;
     }
 
-    public void setCurrent(String current) {
-        this.current = current;
-    }
+
 
     public Element getNext() {
         return next;
