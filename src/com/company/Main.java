@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,20 +13,21 @@ public class Main {
         list.add("Third");
 
         System.out.println("### Printing out elements by index ###");
-        System.out.println(list.get(0));
-        System.out.println(list.get(1));
         System.out.println(list.get(2));
+        System.out.println(list.get(0));
         System.out.println(list.get(3));
+        System.out.println(list.get(1));
 
         System.out.println("\nList size: " + list.size() + "\n");
 
-        System.out.println("### Printng out elements with next() method ###");
+        System.out.println("### Printing out elements with next() method ###");
+        System.out.println(list.get(0));
+        System.out.println(list.next());
         System.out.println(list.get(0));
         System.out.println(list.next());
         System.out.println(list.next());
-        System.out.println(list.next());
 
-        GenericLinkedList<Integer> genericList = new GenericLinkedList<>();
+        GenericLinkedList<Integer> genericList = new GenericLinkedList();
         genericList.add(123);
         genericList.add(234);
         genericList.add(3456);
@@ -34,5 +38,19 @@ public class Main {
         System.out.println(genericList.next());
         System.out.println(genericList.next());
         System.out.println(genericList.get(3));
+
+        GenericLinkedList<User> usersList = new GenericLinkedList<>();
+        usersList.add(new User("Name1", 33));
+        usersList.add(new User("Name2", 44));
+        usersList.add(new User("Name3", 55));
+        usersList.add(new User("Name4", 66));
+        System.out.println(usersList.get(0));
+        System.out.println(usersList.next());
+        System.out.println(usersList.next());
+        System.out.println(usersList.get(3));
+
+        GenericList<User> genericList1 = new GenericList<>();
+
+
     }
 }
